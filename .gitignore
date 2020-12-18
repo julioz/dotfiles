@@ -1,6 +1,8 @@
 # Compiled Python files
 *.pyc
 
+.extra
+
 # compiled node libraries
 node_modules
 
