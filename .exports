@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Increase Bash history size. Allow 32³ entries; the default is 500.
 export HISTSIZE='32768';
 export HISTFILESIZE="${HISTSIZE}";
@@ -17,3 +19,13 @@ export MANPAGER='less -X';
 
 # Use NFS mounts together with Docker Desktop for better performance
 export CRUN_NFS=1
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export ANDROID_NDK_r11c="$HOME/Library/Android/ndk"
+export ANDROID_NDK_r17="$HOME/Library/Android/android-ndk-r17c"
+export ANDROID_NDK_r17c="$HOME/Library/Android/android-ndk-r17c"
+
+source .exports_soundcloud
+
+export PATH="$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/emulator:$ANDROID_HOME/tools/bin:$PATH"

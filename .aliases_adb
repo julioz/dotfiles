@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# Trigger deeplink
+alias deeplink='adb shell am start -W -a android.intent.action.VIEW -d'
+
+# Input text to Android emulator
+alias asit='adb shell input text'
+
+# Toggle Airplane Mode
+alias airplane_on='adb shell settings put global airplane_mode_on 1 && adb shell am broadcast -a android.intent.action.AIRPLANE_MODE'
+alias airplane_off='adb shell settings put global airplane_mode_on 0 && adb shell am broadcast -a android.intent.action.AIRPLANE_MODE'

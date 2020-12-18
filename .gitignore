@@ -2,6 +2,8 @@
 *.pyc
 
 .extra
+.aliases_soundcloud
+.exports_soundcloud
 
 # compiled node libraries
 node_modules
