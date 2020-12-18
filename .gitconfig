@@ -3,14 +3,53 @@
 	br = branch
 	st = status
 	l = log
+	undocommit = reset HEAD~
+	sclone = clone --depth=1
 	ignore = update-index --assume-unchanged
 	unignore = update-index --no-assume-unchanged
 	ignored = !git ls-files -v | grep "^[[:lower:]]"
 	wip = for-each-ref --sort='authordate:iso8601' --format=' %(color:green)%(authordate:relative)%09%(color:white)%(refname:short)' refs/heads
 	alias = ! git config --get-regexp ^alias\\. | sed -e s/^alias\\.// -e s/\\ /\\ =\\ /
+
+[pager]
+	# insanely beautiful diffs ==> npm install -g diff-so-fancy
+	diff = diff-so-fancy | less --tabs=4 -RFX
+	show = diff-so-fancy | less --tabs=4 -RFX
+
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 
+# so much color
+[color]
+	ui = auto
+[color "diff"]
+	meta = yellow bold
+	commit = green bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	whitespace = red reverse
+    newMoved = cyan
+    oldMoved = blue
+[color "diff-highlight"]
+	oldNormal = red bold
+	oldHighlight = "red bold 52"
+	newNormal = "green bold"
+	newHighlight = "green bold 22"
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[fetch]
+	prune = true
+
+[log]
+	date = relative
