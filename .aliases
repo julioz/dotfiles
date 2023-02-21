@@ -13,7 +13,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias code="cd ~/code"
 alias g="git"
-alias gpom='git pull origin master'
+alias gpom='if [ `git rev-parse --verify main 2>/dev/null` ]; then echo "pulling main ..."; git pull origin main; else echo "pulling master ..."; git pull origin master; fi'
 alias glo='git log --pretty=oneline'
 alias gbr='git branch'
 
